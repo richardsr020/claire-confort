@@ -1,420 +1,587 @@
-views/home.php
-    <header class="main-header">
+
+    <style>
+        /* Features Section */
+        .features-area {
+            background: #f8f9fa;
+        }
+        
+        .section-heading h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .section-heading h2 span {
+            color: #000000ff;
+        }
+        
+        .section-heading p {
+            font-size: 1.1rem;
+            color: #6c757d;
+        }
+        
+        .single-feature {
+            padding: 2rem 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .single-feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .icon-wrapper {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #131413ff, #ffffffff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .feature-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .single-feature h4 {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .single-feature p {
+            color: #6c757d;
+            line-height: 1.6;
+        }
+        
+        /* Stats Section */
+        .stats-area {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .stats-area::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+        }
+        
+        .stats-area .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .single-stat {
+            padding: 2rem 1rem;
+        }
+        
+        .stat-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .stat-icon i {
+            font-size: 1.8rem;
+            color: #f39422;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: rgba(255,255,255,0.9);
+            font-weight: 500;
+        }
+        
+        /* Contact Section */
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: #f39422;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .contact-icon i {
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .contact-text h5 {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-text p {
+            color: #6c757d;
+            margin-bottom: 0;
+        }
+        
+        .contact-form .form-control {
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form .form-control:focus {
+            border-color: #40ba37;
+            box-shadow: 0 0 0 0.2rem rgba(64, 186, 55, 0.25);
+        }
+        
+        .contact-form textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        /* Animations */
+        .wow {
+            visibility: hidden;
+        }
+        
+        @media (max-width: 768px) {
+            .section-heading h2 {
+                font-size: 2rem;
+            }
+            
+            .single-feature {
+                margin-bottom: 2rem;
+            }
+            
+            .contact-info-item {
+                padding: 1rem;
+            }
+        }
+    </style>
+    <!-- Search Wrapper Area Start -->
+    <div class="search-wrapper section-padding-100">
+        <div class="search-close">
+            <i class="fa fa-close" aria-hidden="true"></i>
+        </div>
         <div class="container">
-            <div class="logo">
-                <i class="fas fa-spray-can"></i>
-                <span class="logo-text">Claire<span>Confort</span></span>
+            <div class="row">
+                <div class="col-12">
+                    <div class="search-content">
+                        <form action="#" method="get">
+                            <input type="search" name="search" id="search" placeholder="Rechercher un produit...">
+                            <button type="submit"><img src="assets/images/core-img/search.png" alt=""></button>
+                        </form>
+                    </div>
+                </div>
             </div>
-            
-            <button class="mobile-menu" id="mobileMenu">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <nav class="main-nav" id="mainNav">
-                <ul>
-                    <li><a href="index.php?page=home" class="nav-link">Accueil</a></li>
-                    <li><a href="index.php?page=products" class="nav-link">Produits</a></li>
-                    <li><a href="index.php?page=dashboard" class="nav-link">Dashboard</a></li>
-                </ul>
-            </nav>
-            
-            <div class="header-actions">
-                <a href="index.php?page=admin-login" class="btn-login">
-                    <i class="fas fa-sign-in-alt"></i>
-                    <span class="login-text">Connexion</span>
+        </div>
+    </div>
+    <!-- Search Wrapper Area End -->
+
+    <!-- ##### Main Content Wrapper Start ##### -->
+    <div class="main-content-wrapper d-flex clearfix">
+
+        <!-- Mobile Nav (max width 767px)-->
+        <div class="mobile-nav">
+            <!-- Navbar Brand -->
+            <div class="amado-navbar-brand">
+                <a href="index.php?page=home">
+                    <i class="fas fa-spray-can" style="color: #f39422;"></i>
+                    <span class="logo-text">Claire<span style="color: #f39422;">Confort</span></span>
                 </a>
             </div>
+            <!-- Navbar Toggler -->
+            <div class="amado-navbar-toggler">
+                <span></span><span></span><span></span>
+            </div>
         </div>
-    </header>
-    
-<section class="hero">
-    <div class="hero-slides">
-        <div class="hero-slide hero-slide-1 active">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1 class="hero-title">Solutions de Nettoyage Professionnelles</h1>
-                        <p class="hero-description">Des produits écologiques et efficaces pour tous vos besoins de nettoyage - ONG, Entreprises & Particuliers</p>
-                        <div class="hero-buttons">
-                            <a href="index.php?page=products" class="btn btn-primary">
-                                <i class="fas fa-shopping-cart"></i>
-                                Découvrir nos produits
-                            </a>
-                            <a href="#contact" class="btn btn-secondary">
-                                <i class="fas fa-phone"></i>
-                                Nous contacter
-                            </a>
+
+        <!-- Header Area Start -->
+        <header class="header-area clearfix">
+            <!-- Close Icon -->
+            <div class="nav-close">
+                <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.php?page=home">
+                    <i class="fas fa-spray-can" style="color: #f39422;"></i>
+                    <span class="logo-text">Claire<span style="color: #f39422;">Confort</span></span>
+                </a>
+            </div>
+            <!-- Amado Nav -->
+            <nav class="amado-nav">
+                <ul>
+                    <li class="active"><a href="index.php?page=home">Accueil</a></li>
+                    <li><a href="index.php?page=products">Produits</a></li>
+                    <li><a href="index.php?page=dashboard">Dashboard</a></li>
+                </ul>
+            </nav>
+            <!-- Button Group -->
+            <div class="amado-btn-group mt-30 mb-100">
+                <a href="index.php?page=products" class="btn amado-btn mb-15" style="background-color: #f39422; border-color: #f39422;">Nos Produits</a>
+                <a href="#contact" class="btn amado-btn active" style="background-color: #000000; border-color: #000000;">Nous Contacter</a>
+            </div>
+            <!-- Cart Menu -->
+            <div class="cart-fav-search mb-100">
+                <a href="index.php?page=admin-login" class="cart-nav"><img src="assets/images/core-img/user.png" alt=""> Connexion</a>
+            </div>
+            <!-- Social Button -->
+            <div class="social-info d-flex justify-content-between">
+                <a href="#"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
+                <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                <a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            </div>
+        </header>
+        <!-- Header Area End -->
+
+        <!-- Product Catagories Area Start -->
+        <div class="products-catagories-area clearfix">
+            <div class="amado-pro-catagory clearfix">
+
+                <!-- Single Catagory - Nettoyant Multi-Surfaces -->
+                <div class="single-products-catagory clearfix">
+                    <a href="index.php?page=products">
+                        <img src="assets/images/bg-img/1.jpg" alt="Nettoyant Multi-Surfaces">
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line" style="background-color: #f39422;"></div>
+                            <p>À partir de 12,99 €</p>
+                            <h4>Nettoyant Multi-Surfaces</h4>
                         </div>
-                    </div>
+                    </a>
+                </div>
+
+                <!-- Single Catagory - Désinfectant -->
+                <div class="single-products-catagory clearfix">
+                    <a href="index.php?page=products">
+                        <img src="assets/images/bg-img/2.jpg" alt="Désinfectant">
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line" style="background-color: #f39422;"></div>
+                            <p>À partir de 15,50 €</p>
+                            <h4>Désinfectant Air & Surfaces</h4>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Single Catagory - Gel Hydroalcoolique -->
+                <div class="single-products-catagory clearfix">
+                    <a href="index.php?page=products">
+                        <img src="assets/images/bg-img/3.jpg" alt="Gel Hydroalcoolique">
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line" style="background-color: #f39422;"></div>
+                            <p>À partir de 8,75 €</p>
+                            <h4>Gel Hydroalcoolique</h4>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Single Catagory - Produits Écologiques -->
+                <div class="single-products-catagory clearfix">
+                    <a href="index.php?page=products">
+                        <img src="assets/images/bg-img/4.jpg" alt="Produits Écologiques">
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line" style="background-color: #f39422;"></div>
+                            <p>Produits Verts</p>
+                            <h4>Écologique & Biodégradable</h4>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Single Catagory - Professionnels -->
+                <div class="single-products-catagory clearfix">
+                    <a href="index.php?page=products">
+                        <img src="assets/images/bg-img/5.jpg" alt="Professionnels">
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line" style="background-color: #f39422;"></div>
+                            <p>Solutions Pro</p>
+                            <h4>Pour Entreprises & ONG</h4>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Single Catagory - Livraison -->
+                <div class="single-products-catagory clearfix">
+                    <a href="index.php?page=products">
+                        <img src="assets/images/bg-img/6.jpg" alt="Livraison Rapide">
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line" style="background-color: #f39422;"></div>
+                            <p>Service Express</p>
+                            <h4>Livraison 24h</h4>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Single Catagory - Support -->
+                <div class="single-products-catagory clearfix">
+                    <a href="index.php?page=products">
+                        <img src="assets/images/bg-img/7.jpg" alt="Support Client">
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line" style="background-color: #f39422;"></div>
+                            <p>Assistance</p>
+                            <h4>Support 7j/7</h4>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Single Catagory - Qualité -->
+                <div class="single-products-catagory clearfix">
+                    <a href="index.php?page=products">
+                        <img src="assets/images/bg-img/8.jpg" alt="Qualité Certifiée">
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line" style="background-color: #f39422;"></div>
+                            <p>Normes</p>
+                            <h4>Qualité Certifiée</h4>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Single Catagory - Prix -->
+                <div class="single-products-catagory clearfix">
+                    <a href="index.php?page=products">
+                        <img src="assets/images/bg-img/9.jpg" alt="Prix Compétitifs">
+                        <!-- Hover Content -->
+                        <div class="hover-content">
+                            <div class="line" style="background-color: #f39422;"></div>
+                            <p>Économique</p>
+                            <h4>Prix Compétitifs</h4>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
-        
-        <div class="hero-slide hero-slide-2">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1 class="hero-title">Qualité et Respect de l'Environnement</h1>
-                        <p class="hero-description">Des formulations professionnelles pour des résultats impeccables et durables dans le respect de la nature</p>
-                        <div class="hero-buttons">
-                            <a href="index.php?page=products" class="btn btn-primary">
+        <!-- Product Catagories Area End -->
+    </div>` 
+    <!-- ##### Main Content Wrapper End ##### -->
+    <!-- ##### Features Area Start ##### -->
+    <section class="features-area section-padding-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <div class="section-heading text-center mb-70">
+                        <h2>Pourquoi Choisir <span>Claire Confort</span> ?</h2>
+                        <p>Découvrez les avantages qui font de nous votre partenaire de confiance</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Feature 1 -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-feature mb-100 text-center wow fadeInUp" data-wow-delay="100ms">
+                        <div class="feature-icon mb-4">
+                            <div class="icon-wrapper">
                                 <i class="fas fa-leaf"></i>
-                                Produits Écologiques
-                            </a>
-                            <a href="#about" class="btn btn-secondary">
-                                <i class="fas fa-info-circle"></i>
-                                En savoir plus
-                            </a>
+                            </div>
+                        </div>
+                        <h4 class="mb-3">Écologique</h4>
+                        <p class="mb-0">Produits biodégradables et respectueux de l'environnement</p>
+                    </div>
+                </div>
+                <!-- Feature 2 -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-feature mb-100 text-center wow fadeInUp" data-wow-delay="200ms">
+                        <div class="feature-icon mb-4">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-award"></i>
+                            </div>
+                        </div>
+                        <h4 class="mb-3">Haute Qualité</h4>
+                        <p class="mb-0">Formulations professionnelles testées et approuvées</p>
+                    </div>
+                </div>
+                <!-- Feature 3 -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-feature mb-100 text-center wow fadeInUp" data-wow-delay="300ms">
+                        <div class="feature-icon mb-4">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-shipping-fast"></i>
+                            </div>
+                        </div>
+                        <h4 class="mb-3">Livraison Rapide</h4>
+                        <p class="mb-0">Expédition sous 24h avec suivi en temps réel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Features Area End ##### -->
+
+    <!-- ##### Stats Area Start ##### -->
+    <section class="stats-area section-padding-100 bg-img" style="background-image: url(assets/images/bg-img/4.jpg);">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <div class="section-heading text-center mb-70 text-white">
+                        <h2>Notre Engagement Qualité</h2>
+                        <p>Des chiffres qui parlent d'eux-mêmes</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 col-md-3">
+                    <div class="single-stat text-center mb-50 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="stat-icon mb-3">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="stat-number mb-2">500+</h3>
+                        <p class="stat-label mb-0">Clients Satisfaits</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="single-stat text-center mb-50 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="stat-icon mb-3">
+                            <i class="fas fa-boxes"></i>
+                        </div>
+                        <h3 class="stat-number mb-2">50+</h3>
+                        <p class="stat-label mb-0">Produits</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="single-stat text-center mb-50 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="stat-icon mb-3">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="stat-number mb-2">98%</h3>
+                        <p class="stat-label mb-0">Satisfaction Client</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="single-stat text-center mb-50 wow fadeInUp" data-wow-delay="400ms">
+                        <div class="stat-icon mb-3">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h3 class="stat-number mb-2">24h</h3>
+                        <p class="stat-label mb-0">Livraison</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Stats Area End ##### -->
+
+    <!-- ##### Contact Area Start ##### -->
+    <section class="contact-area section-padding-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <div class="section-heading text-center mb-70">
+                        <h2>Contactez-<span>nous</span></h2>
+                        <p>Une question ? Un projet ? Notre équipe vous répond sous 24h</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-4">
+                    <div class="contact-info mb-100">
+                        <div class="contact-info-item mb-5">
+                            <div class="contact-icon mr-3">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h5>Téléphone</h5>
+                                <p>+243 81 234 5678</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item mb-5">
+                            <div class="contact-icon mr-3">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h5>Email</h5>
+                                <p>info@claireconfort.cd</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item mb-5">
+                            <div class="contact-icon mr-3">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h5>Zone d'Intervention</h5>
+                                <p>Partout en République Démocratique du Congo</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon mr-3">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h5>Horaires</h5>
+                                <p>Lun-Ven: 8h00-18h00<br>Sam: 9h00-13h00</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="slide-dots">
-        <div class="slide-dot active" data-slide="0"></div>
-        <div class="slide-dot" data-slide="1"></div>
-    </div>
-</section>
-
-<section class="features">
-    <div class="container">
-        <h2 class="section-title">Pourquoi Choisir Claire Confort ?</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-leaf"></i>
-                </div>
-                <h3>Écologique</h3>
-                <p>Nos produits sont respectueux de l'environnement, biodégradables et fabriqués selon des procédés durables.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-award"></i>
-                </div>
-                <h3>Haute Qualité</h3>
-                <p>Des formulations professionnelles testées et approuvées pour des résultats impeccables et durables.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-shipping-fast"></i>
-                </div>
-                <h3>Livraison Rapide</h3>
-                <p>Expédition sous 24h pour toutes les commandes avec suivi en temps réel de votre livraison.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-hand-holding-usd"></i>
-                </div>
-                <h3>Prix Compétitifs</h3>
-                <p>Des tarifs avantageux pour les professionnels et les particuliers sans compromis sur la qualité.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-headset"></i>
-                </div>
-                <h3>Support 7j/7</h3>
-                <p>Une équipe dédiée pour vous accompagner dans le choix et l'utilisation de nos produits.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <i class="fas fa-certificate"></i>
-                </div>
-                <h3>Certifié</h3>
-                <p>Tous nos produits répondent aux normes internationales de qualité et de sécurité.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="presentation" id="about">
-    <div class="container">
-        <div class="presentation-content">
-            <div class="presentation-text">
-                <h2 class="section-title">Notre Engagement Qualité</h2>
-                <p class="presentation-description">Forte de son expertise dans le domaine des produits d'entretien, Claire Confort s'engage à fournir des solutions de nettoyage innovantes, efficaces et respectueuses de l'environnement.</p>
-                
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label">Clients Satisfaits</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Produits</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">98%</div>
-                        <div class="stat-label">Satisfaction Client</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">24h</div>
-                        <div class="stat-label">Livraison</div>
-                    </div>
-                </div>
-
-                <div class="commitment-list">
-                    <div class="commitment-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Produits 100% biodégradables</span>
-                    </div>
-                    <div class="commitment-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Fabrication responsable</span>
-                    </div>
-                    <div class="commitment-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Emballages recyclables</span>
-                    </div>
-                    <div class="commitment-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Support technique inclus</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="presentation-visual">
-                <div class="visual-card">
-                    <div class="card-icon">
-                        <i class="fas fa-recycle"></i>
-                    </div>
-                    <h4>Éco-responsable</h4>
-                    <p>Engagés dans une démarche environnementale durable</p>
-                </div>
-                <div class="visual-card">
-                    <div class="card-icon">
-                        <i class="fas fa-flask"></i>
-                    </div>
-                    <h4>Innovation</h4>
-                    <p>Recherche et développement permanents</p>
-                </div>
-                <div class="visual-card">
-                    <div class="card-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h4>Proximité</h4>
-                    <p>À l'écoute de vos besoins spécifiques</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="products-preview">
-    <div class="container">
-        <h2 class="section-title">Nos Produits Populaires</h2>
-        <p class="section-subtitle">Découvrez notre sélection de produits les plus appréciés par nos clients</p>
-        
-        <div class="products-grid">
-            <div class="product-card">
-                <div class="product-image">
-                    <i class="fas fa-pump-soap"></i>
-                    <div class="product-badge">Best Seller</div>
-                </div>
-                <div class="product-info">
-                    <h3>Nettoyant Multi-Surfaces</h3>
-                    <p>Élimine efficacement la saleté sur toutes les surfaces sans rayures. Idéal pour le quotidien.</p>
-                    <div class="product-features">
-                        <span><i class="fas fa-check"></i> Écologique</span>
-                        <span><i class="fas fa-check"></i> Sans parfum</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="price">12,99 €</span>
-                        <span class="old-price">15,99 €</span>
-                    </div>
-                    <a href="index.php?page=products" class="btn btn-primary btn-small">Voir détails</a>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-image">
-                    <i class="fas fa-wind"></i>
-                    <div class="product-badge">Nouveau</div>
-                </div>
-                <div class="product-info">
-                    <h3>Désinfectant Air & Surfaces</h3>
-                    <p>Élimine 99,9% des bactéries et virus. Parfait pour les espaces sensibles.</p>
-                    <div class="product-features">
-                        <span><i class="fas fa-check"></i> Action rapide</span>
-                        <span><i class="fas fa-check"></i> Odeur fraîche</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="price">15,50 €</span>
-                    </div>
-                    <a href="index.php?page=products" class="btn btn-primary btn-small">Voir détails</a>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-image">
-                    <i class="fas fa-hand-sparkles"></i>
-                </div>
-                <div class="product-info">
-                    <h3>Gel Hydroalcoolique</h3>
-                    <p>Protection efficace contre les germes. Format pratique pour une utilisation nomade.</p>
-                    <div class="product-features">
-                        <span><i class="fas fa-check"></i> 70% alcool</span>
-                        <span><i class="fas fa-check"></i> Hydratant</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="price">8,75 €</span>
-                        <span class="old-price">10,99 €</span>
-                    </div>
-                    <a href="index.php?page=products" class="btn btn-primary btn-small">Voir détails</a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="text-center">
-            <a href="index.php?page=products" class="btn btn-secondary">
-                <i class="fas fa-store"></i>
-                Voir tous les produits
-            </a>
-        </div>
-    </div>
-</section>
-
-<section class="testimonials">
-    <div class="container">
-        <h2 class="section-title">Ils Nous Font Confiance</h2>
-        <p class="section-subtitle">Découvrez les témoignages de nos clients satisfaits</p>
-        
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="testimonial-content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Les produits Claire Confort ont révolutionné notre processus de nettoyage. Efficaces, écologiques et économiques !"</p>
-                </div>
-                <div class="testimonial-author">
-                    <div class="author-avatar">MJ</div>
-                    <div class="author-info">
-                        <h4>Marie Joseph</h4>
-                        <p>Responsable Entretien, ONG Santé Plus</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="testimonial-card">
-                <div class="testimonial-content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Service client exceptionnel et produits de qualité. Je recommande vivement à toutes les entreprises !"</p>
-                </div>
-                <div class="testimonial-author">
-                    <div class="author-avatar">PD</div>
-                    <div class="author-info">
-                        <h4>Pierre Dubois</h4>
-                        <p>Directeur, Hôtel Belle Vue</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="testimonial-card">
-                <div class="testimonial-content">
-                    <div class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                    <p class="testimonial-text">"Enfin des produits qui nettoient efficacement sans nuire à l'environnement. Bravo pour cette démarche éco-responsable !"</p>
-                </div>
-                <div class="testimonial-author">
-                    <div class="author-avatar">SC</div>
-                    <div class="author-info">
-                        <h4>Sophie Camara</h4>
-                        <p>Particulier</p>
+                <div class="col-12 col-lg-8">
+                    <div class="contact-form">
+                        <form id="contactForm" method="post">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group mb-4">
+                                        <input type="text" class="form-control" name="name" placeholder="Votre nom" required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group mb-4">
+                                        <input type="email" class="form-control" name="email" placeholder="Votre email" required>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group mb-4">
+                                        <textarea class="form-control" name="message" rows="6" placeholder="Votre message..." required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn amado-btn w-100">
+                                        <i class="fas fa-paper-plane mr-2"></i>
+                                        <span class="button-text">Envoyer le message</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<section class="contact" id="contact">
-    <div class="container">
-        <h2 class="section-title">Contactez-nous</h2>
-        <p class="section-subtitle">Une question ? Un projet ? Notre équipe vous répond sous 24h</p>
-        
-        <div class="contact-grid">
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h3>Téléphone</h3>
-                        <p><?php echo COMPANY_PHONE1; ?></p>
-                        <p><?php echo COMPANY_PHONE2; ?></p>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h3>Email</h3>
-                        <p><?php echo COMPANY_EMAIL; ?></p>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h3>Horaires</h3>
-                        <p>Lun - Ven: 8h00 - 18h00</p>
-                        <p>Sam: 9h00 - 13h00</p>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div class="contact-details">
-                        <h3>Zone d'Intervention</h3>
-                        <p>Partout en République Démocratique du Congo</p>
-                        <p>Livraison internationale disponible</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="contact-form">
-                <form id="contactForm">
-                    
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Votre adresse email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" placeholder="Votre message..." rows="6" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full">
-                        <i class="fas fa-paper-plane"></i>
-                        Envoyer le message
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
+    <!-- ##### Contact Area End ##### -->

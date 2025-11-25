@@ -1,53 +1,71 @@
-<!-- views/footer.php -->
-    </main>
 
-    <footer class="main-footer">
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer_area clearfix">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="logo">
-                        <i class="fas fa-spray-can"></i>
-                        <span class="logo-text"><?php echo SITE_NAME; ?></span>
+            <div class="row align-items-center">
+                <!-- Single Widget Area -->
+                <div class="col-12 col-lg-4">
+                    <div class="single_widget_area">
+                        <!-- Logo -->
+                        <div class="footer-logo mr-50">
+                            <a href="index.php?page=home">
+                                <i class="fas fa-spray-can"></i>
+                                <span class="logo-text">Claire<span>Confort</span></span>
+                            </a>
+                        </div>
+                        <!-- Copywrite Text -->
+                        <p class="copywrite">
+                            &copy; <script>document.write(new Date().getFullYear());</script> Claire Confort. Tous droits réservés.<br>
+                            Solutions de nettoyage professionnelles.
+                        </p>
                     </div>
-                    <p><?php echo SITE_DESCRIPTION; ?></p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    </div>
                 </div>
-                
-                <div class="footer-section">
-                    <h3>Liens Rapides</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.php?page=home"><i class="fas fa-chevron-right"></i> Accueil</a></li>
-                        <li><a href="index.php?page=products"><i class="fas fa-chevron-right"></i> Produits</a></li>
-                        <li><a href="index.php?page=admin-login"><i class="fas fa-chevron-right"></i> Connexion</a></li>
-                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                        <p><?php echo COMPANY_PHONE1; ?></p>
-                        <p><?php echo COMPANY_PHONE2; ?></p>
-                        <p><?php echo COMPANY_EMAIL; ?></p>
-
-                </div>
-                
-                <div class="footer-section">
-                    <h3>Informations Légales</h3>
-                    <div class="legal-info">
-                        <p><strong>Id. Nat:</strong> <?php echo COMPANY_ID_NAT; ?></p>
-                        <p><strong>RCCM:</strong> <?php echo COMPANY_RCCM; ?></p>
-                        <p><strong>NIF:</strong> <?php echo COMPANY_NIF; ?></p>
+                <!-- Single Widget Area -->
+                <div class="col-12 col-lg-8">
+                    <div class="single_widget_area">
+                        <!-- Footer Menu -->
+                        <div class="footer_menu">
+                            <nav class="navbar navbar-expand-lg justify-content-end">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#footerNavContent" aria-controls="footerNavContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+                                <div class="collapse navbar-collapse" id="footerNavContent">
+                                    <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="index.php?page=home">Accueil</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="index.php?page=products">Produits</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="index.php?page=dashboard">Dashboard</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="index.php?page=admin-login">Connexion</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
+    <!-- ##### Footer Area End ##### -->
 
-    <script src="assets/js/main.js"></script>
+    <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
+    <script src="assets/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="assets/js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="assets/js/plugins.js"></script>
+    <!-- Active js -->
+    <script src="assets/js/active.js"></script>
+    <!-- Classy Nav js -->
+    <script src="assets/js/classy-nav.min.js"></script>
+    <script src="assets/js/contact.js"></script>
+
 </body>
+
 </html>
