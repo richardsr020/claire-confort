@@ -214,12 +214,12 @@
     <!-- ##### Main Content Wrapper Start ##### -->
     <div class="main-content-wrapper d-flex clearfix">
 
-        <!-- Mobile Nav (max width 767px)-->
+                <!-- Mobile Nav (max width 767px)-->
         <div class="mobile-nav">
             <!-- Navbar Brand -->
             <div class="amado-navbar-brand">
                 <a href="index.php?page=home">
-                    <i class="fas fa-spray-can" style="color: #f39422;"></i>
+                    <img src="assets/images/claire_icon.png" alt="Claire Confort" class="logo-icon">
                     <span class="logo-text">Claire<span style="color: #f39422;">Confort</span></span>
                 </a>
             </div>
@@ -232,13 +232,14 @@
         <!-- Header Area Start -->
         <header class="header-area clearfix">
             <!-- Close Icon -->
+                <!-- Close Icon -->
             <div class="nav-close">
                 <i class="fa fa-close" aria-hidden="true"></i>
             </div>
             <!-- Logo -->
             <div class="logo">
                 <a href="index.php?page=home">
-                    <i class="fas fa-spray-can" style="color: #f39422;"></i>
+                    <img src="assets/images/claire_icon.png" alt="Claire Confort" class="logo-icon">
                     <span class="logo-text">Claire<span style="color: #f39422;">Confort</span></span>
                 </a>
             </div>

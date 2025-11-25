@@ -9,7 +9,7 @@
                         <!-- Logo -->
                         <div class="footer-logo mr-50">
                             <a href="index.php?page=home">
-                                <i class="fas fa-spray-can"></i>
+                                <img src="assets/images/claireicon.png" alt="Claire Confort" class="logo-icon">
                                 <span class="logo-text">Claire<span>Confort</span></span>
                             </a>
                         </div>

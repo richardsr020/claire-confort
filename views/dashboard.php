@@ -14,10 +14,16 @@ if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== tru
     <div class="dashboard-header">
         <div class="container">
             <div class="dashboard-nav">
-                <div class="nav-brand">
-                    <i class="fas fa-spray-can"></i>
-                    <span class="logo-text">Claire<span>Confort</span> <small>Admin</small></span>
-                </div>
+                    <div class="mobile-nav">
+                        <!-- Navbar Brand -->
+                        <div class="amado-navbar-brand">
+                            <a href="index.php?page=home">
+                                <img src="assets/images/claire_icon.png" alt="Claire Confort" class="logo-icon">
+                                <span class="logo-text">Claire<span style="color: #f39422;">Confort</span></span>
+                            </a>
+                        </div>
+
+                    </div>
                 
                 <div class="nav-actions">
                     <!-- Bouton Retour à l'accueil -->

@@ -47,6 +47,63 @@
     padding: 1rem 0;
 }
 
+/* Logo Icon Responsive */
+.logo-icon {
+    display: inline-block;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Nav Logo */
+.mobile-nav .logo-icon {
+    width: 35px;
+    height: 35px;
+    margin-right: 8px;
+}
+
+/* Ajustements pour le texte du logo */
+.amado-navbar-brand .logo-text {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
+/* Responsive pour mobiles */
+@media (max-width: 767px) {
+    .mobile-nav .logo-icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 6px;
+    }
+    
+    .amado-navbar-brand .logo-text {
+        font-size: 1.1rem;
+    }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+    .mobile-nav .logo-icon {
+        width: 25px;
+        height: 25px;
+        margin-right: 5px;
+    }
+    
+    .amado-navbar-brand .logo-text {
+        font-size: 1rem;
+    }
+}
+
+/* Hover effects */
+.logo-icon:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* Pour s'assurer que l'image conserve ses proportions */
+.logo-icon {
+    object-fit: contain;
+}
 .nav-brand {
     display: flex;
     align-items: center;

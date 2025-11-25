@@ -47,16 +47,16 @@
     <div class="main-content-wrapper d-flex clearfix">
 
         <!-- Mobile Nav -->
+<!-- Mobile Nav (max width 767px)-->
         <div class="mobile-nav">
+            <!-- Navbar Brand -->
             <div class="amado-navbar-brand">
                 <a href="index.php?page=home">
-                    <i class="fas fa-spray-can" style="color: #f39422;"></i>
+                    <img src="assets/images/claire_icon.png" alt="Claire Confort" class="logo-icon">
                     <span class="logo-text">Claire<span style="color: #f39422;">Confort</span></span>
                 </a>
             </div>
-            <div class="amado-navbar-toggler">
-                <span></span><span></span><span></span>
-            </div>
+
         </div>
 
         <!-- Header Area Start -->

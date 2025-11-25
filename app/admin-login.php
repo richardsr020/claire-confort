@@ -3,10 +3,15 @@
     <div class="login-container">
         <div class="login-card">
             <div class="login-header">
-                <div class="login-logo">
-                    <i class="fas fa-spray-can"></i>
-                    <span class="logo-text">Claire<span>Confort</span></span>
-                </div>
+                    <!-- Navbar Brand -->
+                    <div class="amado-navbar-brand">
+                        <a href="index.php?page=home">
+                            <img src="assets/images/claire_icon.png" alt="Claire Confort" class="logo-icon">
+                            <span class="logo-text">Claire<span style="color: #f39422;">Confort</span></span>
+                        </a>
+                    </div>
+
+                
                 <h1>Connexion Administrateur</h1>
                 <p>Accédez à votre espace d'administration</p>
                 
