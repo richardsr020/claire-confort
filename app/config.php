@@ -42,11 +42,11 @@ define('ADMIN_PASSWORD_HASH', '$2y$10$Vnw9KABKZ2MKJkjGIlT9VOUZ4V9hiBbrtxuuCYFw3x
 // Configuration du site
 define('ITEMS_PER_PAGE', 12);
 define('SITE_URL', (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]");
-define('CURRENCY', '€');
-define('CURRENCY_SYMBOL', '€');
+define('CURRENCY', '$');
+define('CURRENCY_SYMBOL', '$');
 
 // Mode debug (désactiver en production)
-define('DEBUG_MODE', true);
+define('DEBUG_MODE', false);
 
 // Configuration des sessions
 define('SESSION_TIMEOUT', 3600); // 1 heure en secondes
@@ -192,7 +192,7 @@ function initializeDatabase() {
             ['site_maintenance', '0', 'boolean'],
             ['contact_email', COMPANY_EMAIL, 'string'],
             ['items_per_page', '12', 'number'],
-            ['currency', 'EUR', 'string']
+            ['currency', 'USD', 'string']
         ];
         
         $settingSql = "INSERT OR IGNORE INTO settings (setting_key, setting_value, setting_type) VALUES (?, ?, ?)";
