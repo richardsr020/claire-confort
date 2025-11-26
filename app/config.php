@@ -43,10 +43,10 @@ define('ADMIN_PASSWORD_HASH', '$2y$10$Vnw9KABKZ2MKJkjGIlT9VOUZ4V9hiBbrtxuuCYFw3x
 define('ITEMS_PER_PAGE', 12);
 define('SITE_URL', (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]");
 define('CURRENCY', '$');
-define('CURRENCY_SYMBOL', '$');
+//define('CURRENCY_SYMBOL', '$');
 
 // Mode debug (désactiver en production)
-define('DEBUG_MODE', false);
+define('DEBUG_MODE', true);
 
 // Configuration des sessions
 define('SESSION_TIMEOUT', 3600); // 1 heure en secondes

@@ -248,7 +248,7 @@ class ProductsManager {
                     
                     <div class="product-meta">
                         <div class="product-price">
-                            ${parseFloat(product.price).toFixed(2)} €
+                            ${parseFloat(product.price).toFixed(2)} $
                         </div>
                         <div class="product-stock ${this.getStockClass(stockStatus)}">
                             ${this.getStockText(product.stock_quantity)}

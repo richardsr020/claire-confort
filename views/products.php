@@ -130,10 +130,10 @@
                                 <h5>Prix</h5>
                                 <div class="filter-options" id="priceFilters">
                                     <div class="filter-option active" data-price="all">Tous</div>
-                                    <div class="filter-option" data-price="0-10">0-10 €</div>
-                                    <div class="filter-option" data-price="10-20">10-20 €</div>
-                                    <div class="filter-option" data-price="20-50">20-50 €</div>
-                                    <div class="filter-option" data-price="50+">50+ €</div>
+                                    <div class="filter-option" data-price="0-10">0-10 $</div>
+                                    <div class="filter-option" data-price="10-20">10-20 $</div>
+                                    <div class="filter-option" data-price="20-50">20-50 $</div>
+                                    <div class="filter-option" data-price="50+">50+ $</div>
                                 </div>
                             </div>
                         </div>
