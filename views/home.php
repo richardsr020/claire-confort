@@ -1,5 +1,34 @@
 
     <style>
+        /* Correction minimale pour les problèmes actuels */
+    .amado-pro-catagory.clearfix {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+    }
+
+    .single-products-catagory.clearfix {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .single-products-catagory.clearfix img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Forcer la couleur grise pour tous les h4 */
+    .single-products-catagory .hover-content h4 {
+        color: #ffffffff !important;
+        font-weight: 600;
+    }
+
+    /* S'assurer que le style inline ne surcharge pas */
+    .single-products-catagory .hover-content h4[style] {
+        color: #6c757d !important;
+    }
         /* Features Section */
         .features-area {
             background: #f8f9fa;
@@ -281,7 +310,7 @@
                         <!-- Hover Content -->
                         <div class="hover-content">
                             <div class="line" style="background-color: #f39422;"></div>
-                            <p>À partir de 12,99 €</p>
+                            <p>Outils manuel</p>
                             <h4>Nettoyant Multi-Surfaces</h4>
                         </div>
                     </a>
@@ -294,8 +323,8 @@
                         <!-- Hover Content -->
                         <div class="hover-content">
                             <div class="line" style="background-color: #f39422;"></div>
-                            <p>À partir de 15,50 €</p>
-                            <h4>Désinfectant Air & Surfaces</h4>
+                            <p>Grandes surfaces</p>
+                            <h4>Detergants</h4>
                         </div>
                     </a>
                 </div>
@@ -307,8 +336,8 @@
                         <!-- Hover Content -->
                         <div class="hover-content">
                             <div class="line" style="background-color: #f39422;"></div>
-                            <p>À partir de 8,75 €</p>
-                            <h4>Gel Hydroalcoolique</h4>
+                            <p>Aspirateurs </p>
+                            <h4>Grands surface</h4>
                         </div>
                     </a>
                 </div>
